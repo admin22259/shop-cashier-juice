@@ -1,0 +1,22 @@
+<?php
+session_start();
+include 'config.php';
+
+$data = json_decode(file_get_contents("php://input"), true);
+$customer_id = $data['customer_id'];
+$items = $data['items'];
+$waiter_id = $_SESSION['user_id'] ?? 1;
+
+$stmt = $mysqli->prepare("INSERT INTO orders (customer_id, waiter_id) VALUES (?, ?)");
+$stmt->bind_param("ii",$customer_id,$waiter_id);
+$stmt->execute();
+$order_id = $mysqli->insert_id;
+
+foreach($items as $item){
+    $stmt = $mysqli->prepare("INSERT INTO order_items (order_id, product_id, size, quantity) VALUES (?,?,?,?)");
+    $stmt->bind_param("iisi",$order_id,$item['id'],$item['size'],$item['qty']);
+    $stmt->execute();
+}
+
+echo "تم حفظ الفاتورة رقم: $order_id";
+?>
