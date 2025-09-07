@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نظام كاشير محل العصاير - متقدم</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>نظام كاشير محل العصاير</h1>
+
+<!-- اختيار الجراسين -->
+<label>اختر الطاولة/الجرّاس:</label>
+<select id="tableSelect">
+  <option value="1">جرّاس 1</option>
+  <option value="2">جرّاس 2</option>
+  <option value="3">جرّاس 3</option>
+</select>
+
+<h2>المنتجات</h2>
+<div id="products"></div>
+
+<h2>السلة</h2>
+<ul id="cart"></ul>
+<h3>الإجمالي: <span id="total">0</span> جنيه</h3>
+<button onclick="checkout()">الدفع</button>
+<button onclick="printInvoice()">طباعة الفاتورة</button>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+[
+  {"name": "برتقال", "sizes": [{"size": "صغير", "price": 8}, {"size": "متوسط", "price": 10}, {"size": "كبير", "price": 12}]},
+  {"name": "مانجو", "sizes": [{"size": "صغير", "price": 12}, {"size": "متوسط", "price": 15}, {"size": "كبير", "price": 18}]},
+  {"name": "فراولة", "sizes": [{"size": "صغير", "price": 10}, {"size": "متوسط", "price": 12}, {"size": "كبير", "price": 14}]}
+]
